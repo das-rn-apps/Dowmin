@@ -18,7 +18,10 @@ export default function Login() {
         try {
             const res = await axios.post('/auth/login', { email, password });
             login(res.data);
-            navigate('/');
+            if (res.data.isAdmin)
+                navigate('/admin')
+            else
+                navigate('/');
         } catch {
             setError('Invalid email or password.');
         }

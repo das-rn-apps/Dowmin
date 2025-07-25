@@ -31,12 +31,12 @@ export default function ProductCard({ product }: { product: Product }) {
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-200 p-4 flex flex-col">
+        <div className="shadow-sm hover:shadow-md bg-amber-400 rounded-lg p-1.5">
             {/* Product Image */}
             <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-44 object-cover rounded-md mb-4"
+                className="w-full h-44 object-cover rounded-t-md mb-4"
             />
 
             {/* Product Info */}

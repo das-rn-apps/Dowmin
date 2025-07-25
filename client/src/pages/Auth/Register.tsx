@@ -19,7 +19,10 @@ export default function Register() {
         try {
             const res = await axios.post('/auth/register', { name, email, password });
             login(res.data);
-            navigate('/');
+            if (res.data.isAdmin)
+                navigate('/admin')
+            else
+                navigate('/');
         } catch {
             setError('Registration failed. Please try again.');
         }
